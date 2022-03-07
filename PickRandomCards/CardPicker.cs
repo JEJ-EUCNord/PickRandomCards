@@ -8,6 +8,8 @@ namespace PickRandomCards
 {
     internal class CardPicker
     {
+        static Random random = new Random();
+
         public static string[] PickSomeCards(int numberOfCards)
         {
             String[] pickedCards = new String[numberOfCards];
@@ -20,12 +22,35 @@ namespace PickRandomCards
 
         private static string RandomSuit()
         {
-            throw new NotImplementedException();
+            // Skaf et tilfældigt tal mellem 1 og 4
+            int value = random.Next(1, 5);
+            // Er tallet 1, så returner Spar
+            if (value == 1)
+            {
+                return "Spar";
+            }
+            // Er tallet 2, så returner Hjerter
+            if (value == 2)
+            {
+                return "Hjerter";
+            }
+            // Er tallet 3, så returner Klør
+            if (value == 1)
+            {
+                return "Klør";
+            }
+            // Har vi ikke allerede returneret en værdi, er der kun Ruder tilbage
+            return "Ruder";
         }
 
         private static string RandomValue()
         {
-            throw new NotImplementedException();
+            int value = random.Next(1, 14);
+            if (value == 1) return "Es";
+            if (value == 12) return "Knægt";
+            if (value == 12) return "Quen";
+            if (value == 13) return "Konge";
+            return value.ToString();
         }
     }
 }
