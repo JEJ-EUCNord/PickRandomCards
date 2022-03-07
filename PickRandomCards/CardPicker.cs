@@ -10,7 +10,8 @@ namespace PickRandomCards
     {
         public static string[] PickSomeCards(int numberOfCards)
         {
-            
+            String[] pickedCards = new String[numberOfCards];
+            return pickedCards;
         }
     }
 }
