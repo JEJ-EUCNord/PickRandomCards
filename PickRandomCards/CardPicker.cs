@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PickRandomCards
 {
-    internal class CardPicker
+    public class CardPicker
     {
         static Random random = new Random();
 
@@ -15,7 +15,7 @@ namespace PickRandomCards
             String[] pickedCards = new String[numberOfCards];
             for (int i = 0; i < numberOfCards; i++)
             {
-                pickedCards[i] = RandomValue() + " of " + RandomSuit();
+                pickedCards[i] = RandomSuit() + " " + RandomValue();
             }
             return pickedCards;
         }
@@ -47,8 +47,8 @@ namespace PickRandomCards
         {
             int value = random.Next(1, 14);
             if (value == 1) return "Es";
-            if (value == 12) return "Knægt";
-            if (value == 12) return "Quen";
+            if (value == 11) return "Knægt";
+            if (value == 12) return "Dronning";
             if (value == 13) return "Konge";
             return value.ToString();
         }
